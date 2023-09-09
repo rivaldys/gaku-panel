@@ -1,2 +1,2 @@
 # Gaku Panel
-Gaku admin panel for managing music/song data.
+Admin panel for managing Japanese music/song data on Gaku web.
