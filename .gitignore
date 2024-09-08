@@ -12,15 +12,8 @@ dist
 dist-ssr
 *.local
 
-# Misc
-.env
-.env.development
-.env.production
-package-lock.json
-pnpm-lock.yaml
-
 # Editor directories and files
-.vscode/*
+# .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store

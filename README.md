@@ -4,6 +4,7 @@ Admin panel for managing Japanese music/song data on Gaku web.
 ## &#10095; Installation Prerequisites
 The following are required to be able to run this application:
 - Node.js 18
+- pnpm (package manager)
 
 ## &#10095; Development
 For development purposes, before running this application please do some necessary preparations including: installing dependencies, and setting environment variables in the `.env.development` file.
@@ -11,7 +12,11 @@ For development purposes, before running this application please do some necessa
 ### &#10102; Dependencies Installation
    Command:
    ```shell
-   npm install
+   npm install -g pnpm
+   ```
+   Run the above command if `pnpm` is not installed. Then run the command below:
+   ```shell
+   pnpm install
    ```
    ___
 
@@ -27,7 +32,7 @@ Command:
 ### &#10104; Running the App
    Command:
    ```shell
-   npm run dev
+   pnpm dev
    ```
 
 ## &#10095; Author
