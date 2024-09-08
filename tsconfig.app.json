@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "useDefineForClassFields": true,
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "module": "ESNext",
+        "skipLibCheck": true,
+
+        /* Bundler mode */
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "noEmit": true,
+        "jsx": "react-jsx",
+
+        /* Linting */
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+
+        /* Absolute imports */
+        "baseUrl": "src",
+        "paths":
+        {
+            "gaku/assets": ["assets"],
+            "gaku/images": ["assets/images"],
+            "gaku/components": ["components"],
+            "gaku/pages": ["pages"],
+            "gaku/router": ["router"],
+            "gaku/services/actions": ["services/actions"],
+            "gaku/services": ["services"],
+            "gaku/services/*": ["services/*"],
+            "gaku/types": ["types"],
+            "gaku/utils": ["utils"],
+            "gaku/package": ["../package.json"],
+        }
+    },
+    "include": ["src"]
+}
