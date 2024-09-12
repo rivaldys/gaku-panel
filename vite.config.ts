@@ -9,15 +9,18 @@ export default ({ mode }: ConfigEnv) => {
         plugins: [react()],
         resolve: {
             alias: {
-                "gaku/assets": "/src/assets/index.ts",
-                "gaku/images": "/src/assets/images/index.ts",
-                "gaku/components": "/src/components/index.ts",
-                "gaku/pages": "/src/pages/index.ts",
-                "gaku/router": "/src/router/index.tsx",
-                "gaku/services/actions": "/src/services/actions/index.ts",
-                "gaku/services": "/src/services/index.ts",
-                "gaku/types": "/src/types/index.ts",
-                "gaku/utils": "/src/utils/index.ts",
+                "gaku/assets": "/src/assets",
+                "gaku/images": "/src/assets/images",
+                "gaku/components": "/src/components",
+                "gaku/hooks": "/src/utils/_hooks",
+                "gaku/pages": "/src/pages",
+                "gaku/router": "/src/routerx",
+                "gaku/services/actions": "/src/services/actions",
+                "gaku/services": "/src/services",
+                "gaku/types": "/src/utils/_types",
+                "gaku/utils": "/src/utils",
+                "gaku/utils/hooks": "/src/utils/_hooks",
+                "gaku/utils/types": "/src/utils/_types",
                 "gaku/package": "/package.json"
             }
         },
