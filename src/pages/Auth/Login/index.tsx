@@ -1,11 +1,10 @@
-import { Button, Input, InputGroup } from 'gaku/components'
+import { Button, ErrorMessage, Input, InputGroup } from 'gaku/components'
+import { useAppDispatch, useAppSelector, useForm } from 'gaku/hooks'
 import { loginAction } from 'gaku/services/actions'
-import { AppDispatch, RootState } from 'gaku/services/store'
-import { ActionResponse } from 'gaku/types'
-import { browserMind, useForm } from 'gaku/utils'
+import type { ActionResponse, ErrorState } from 'gaku/types'
+import { browserMind } from 'gaku/utils'
 import { FormEvent, useCallback, useEffect } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () =>
@@ -16,10 +15,8 @@ const Login = () =>
     })
 
     const navigate = useNavigate()
-    const dispatch: AppDispatch = useDispatch()
-    const { errors } = useSelector((state: RootState) => state.login)
-
-    console.log('[Gaku] Errors:', errors)
+    const dispatch = useAppDispatch()
+    const { errors } = useAppSelector(state => state.login) as { errors: ErrorState | false }
 
     const redirectIfAuthenticated = useCallback(() => navigate('/panel/songs'), [history])
 
@@ -64,8 +61,8 @@ const Login = () =>
                                     onChange={event => setForm('username', event.target.value)}
                                     name="username"
                                     id="username"
-                                    // errorMessage={errors.username && errors.username.msg}
                                 />
+                                <ErrorMessage className="mt-[5px]">{errors && errors.username && errors.username.msg}</ErrorMessage>
                             </InputGroup>
                             <InputGroup className="mb-9">
                                 <Input
@@ -74,8 +71,8 @@ const Login = () =>
                                     onChange={event => setForm('password', event.target.value)}
                                     name="password"
                                     id="password"
-                                    // errorMessage={errors.password && errors.password.msg}
                                 />
+                                <ErrorMessage className="mt-[5px]">{errors && errors.password && errors.password.msg}</ErrorMessage>
                             </InputGroup>
                             <Button className="w-full" type="submit">Login</Button>
                         </form>

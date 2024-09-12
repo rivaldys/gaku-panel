@@ -1,4 +1,4 @@
-import { IconProps } from 'gaku/types'
+import type { IconProps } from 'gaku/types'
 import {
     IcBell,
     IcChat,
@@ -24,7 +24,7 @@ import {
     IcViewGrid,
     IcX,
     IcXCircle
-} from '../../../assets'
+} from 'gaku/assets'
 
 const Icon = ({ name, size, color, variant }: IconProps) =>
 {

@@ -1,21 +1,18 @@
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    className?: string
-    errorMessage?: string
-}
+import { cva } from 'class-variance-authority'
+import type { InputHTMLAttributes } from 'react'
 
-const Input = ({ className, errorMessage, ...rest }: InputProps) =>
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+
+const inputStyle = cva('w-full border border-gray-200 focus:outline-none focus:bg-red-50/40 focus:border-red-200 px-5 py-3 rounded-lg text-sm text-[#555555] font-light')
+
+const Input = ({ className, ...rest }: InputProps) =>
 {
-    const customStyles = className ? ` ${className}` : ''
-
     return (
-        <>
-            <input
-                className={`w-full border border-gray-200 focus:outline-none focus:bg-red-50/40 focus:border-red-200 px-5 py-3 rounded-lg text-sm text-[#555555] font-light${customStyles}`}
-                spellCheck={false}
-                {...rest}
-            />
-            {errorMessage && <p className="mt-[5px] text-[#E06379] font-light text-xs">{errorMessage}</p>}
-        </>
+        <input
+            className={inputStyle({ className })}
+            spellCheck={false}
+            {...rest}
+        />
     )
 }
 

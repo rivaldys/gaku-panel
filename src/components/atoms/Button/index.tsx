@@ -1,8 +1,8 @@
 import { cva } from 'class-variance-authority'
+import type { ButtonHTMLAttributes } from 'react'
 import Icon from '../Icon'
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     icon?: string
     variant?: 'filled' | 'outlined' | 'disabled' | null | undefined
     size?: 'sm' | 'md' | 'sm-icon-only' | 'md-icon-only' | null | undefined
