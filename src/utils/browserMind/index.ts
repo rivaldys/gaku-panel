@@ -29,4 +29,9 @@ const remember = (key: string, { protect }: rememberOptions = {}) =>
     if(value != null) return JSON.parse(value)
 }
 
-export const browserMind = (() => ({ memorize, remember }))()
+const forget = (key: string) =>
+{
+    localStorage.removeItem(key)
+}
+
+export const browserMind = (() => ({ memorize, remember, forget }))()
