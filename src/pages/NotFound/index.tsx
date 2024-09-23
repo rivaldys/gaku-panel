@@ -1,4 +1,4 @@
-export const NotFound = () =>
+const NotFound = () =>
 {
     return (
         <>
@@ -6,3 +6,6 @@ export const NotFound = () =>
         </>
     )
 }
+
+export default NotFound
+export { NotFound }

@@ -6,19 +6,32 @@ import { useEffect, useRef, useState } from 'react'
 interface ImageProps extends HTMLProps<HTMLImageElement> {
     classNames?: { img: string }
     preload?: string
-    transitionDuration?: number
+    variant?: 'default' | 'cover'
 }
 
 const imageWrapperStyle = cva('overflow-hidden')
+const imageStyle = cva('w-full h-full bg-gray-200 transition duration-500', {
+    variants:
+    {
+        variant:
+        {
+            default: '',
+            cover: 'object-cover object-center'
+        }
+    },
+    defaultVariants:
+    {
+        variant: 'default'
+    }
+})
 
-const Image = ({ className, classNames, src, preload, alt, transitionDuration }: ImageProps) =>
+const Image = ({ className, classNames, src, preload, alt, variant }: ImageProps) =>
 {
     const [imageSrc, setImageSrc] = useState(preload ? preload : src)
     const [currentBlur, setCurrentBlur] = useState(preload ? 'blur-md' : 'blur-none')
     const imageRef = useRef(null)
 
     const inView = useIntersectionObserver({ ref: imageRef })
-    const imageStyle = (classNames && classNames.img) ? ` ${classNames.img}` : ''
     
     useEffect(() =>
     {
@@ -35,7 +48,7 @@ const Image = ({ className, classNames, src, preload, alt, transitionDuration }:
     return (
         <div className={imageWrapperStyle({ className })}>
             <img
-                className={`w-full h-full object-cover object-center transition ${transitionDuration ? 'duration-[' + transitionDuration + ']' : 'duration-1000'} bg-gray-200 ${currentBlur}${imageStyle}`}
+                className={imageStyle({ className: `${currentBlur}${classNames ? classNames.img : undefined}`, variant })}
                 ref={imageRef}
                 src={imageSrc}
                 alt={alt}

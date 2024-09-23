@@ -7,4 +7,5 @@ const Song = () =>
     )
 }
 
+export default Song
 export { Song }
