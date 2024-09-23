@@ -1,3 +1,6 @@
+import type { ComponentType, LazyExoticComponent } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 declare global {
     interface Window {
         flash: (message?: BusProps['message'], type?: BusProps['type']) => void
@@ -41,4 +44,20 @@ export type ActionRequest = object | object[]
 export interface ActionResponse {
     succeed?: () => void
     failed?: () => void
+}
+
+export interface Route {
+    path?: string
+    index?: boolean
+    element: LazyExoticComponent<ComponentType<{}>> | string
+    children?: Route[]
+    meta?: {
+        isProtectedRoute?: boolean
+        navbar?: string
+        redirection?: string
+    }
+}
+
+export interface RouteComponentProps {
+    navigate: ReturnType<typeof useNavigate>
 }
