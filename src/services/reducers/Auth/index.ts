@@ -1,5 +1,7 @@
 import loginReducer from './loginReducer'
+import logoutReducer from './logoutReducer'
 
 export {
-    loginReducer
+    loginReducer,
+    logoutReducer
 }
