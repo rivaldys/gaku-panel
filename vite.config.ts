@@ -14,7 +14,7 @@ export default ({ mode }: ConfigEnv) => {
                 "gaku/components": "/src/components",
                 "gaku/hooks": "/src/utils/_hooks",
                 "gaku/pages": "/src/pages",
-                "gaku/router": "/src/routerx",
+                "gaku/router": "/src/router",
                 "gaku/services/actions": "/src/services/actions",
                 "gaku/services": "/src/services",
                 "gaku/types": "/src/utils/_types",
