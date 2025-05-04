@@ -1,11 +1,11 @@
 import { Button, ErrorMessage, Input, InputGroup } from 'gaku/components'
-import { useAppDispatch, useAppSelector, useForm } from 'gaku/hooks'
-import { loginAction } from 'gaku/services/actions'
+import { useAppDispatch, useAppSelector, useForm } from 'gaku/shared/hooks'
 import type { ActionResponse, ErrorState } from 'gaku/types'
 import { browserMind } from 'gaku/utils'
 import { FormEvent, useCallback, useEffect } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { useNavigate } from 'react-router-dom'
+import { login } from 'gaku/services/slices'
 
 const Login = () =>
 {
@@ -30,7 +30,7 @@ const Login = () =>
     {
         e.preventDefault()
         const res: ActionResponse = { succeed: redirectIfAuthenticated }
-        dispatch(loginAction(form, res))
+        dispatch(login(form))
     }
 
     useEffect(() =>

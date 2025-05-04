@@ -1,26 +1,44 @@
 {
-  "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "compilerOptions": {
+        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+        "target": "ES2020",
+        "useDefineForClassFields": true,
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "module": "ESNext",
+        "skipLibCheck": true,
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
+        /* Bundler mode */
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "noEmit": true,
+        "jsx": "react-jsx",
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
-  },
-  "include": ["src"]
+        /* Linting */
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUncheckedSideEffectImports": true,
+
+        /* Absolute imports */
+        "baseUrl": "src",
+        "paths": {
+            "gaku/assets": ["assets"],
+            "gaku/images": ["assets/images"],
+            "gaku/components": ["components"],
+            "gaku/pages": ["pages"],
+            "gaku/router": ["router"],
+            "gaku/services/api": ["services/api"],
+            "gaku/services/slices": ["services/slices"],
+            "gaku/services/store": ["services/store"],
+            "gaku/shared/constants": ["shared/constants"],
+            "gaku/shared/hooks": ["shared/hooks"],
+            "gaku/shared/types": ["shared/types"],
+            "gaku/shared/utils": ["shared/utils"],
+            "gaku/package": ["../package.json"],
+        }
+    },
+    "include": ["src"]
 }

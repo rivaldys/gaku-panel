@@ -1,39 +1,42 @@
 {
-  "name": "gaku-panel",
-  "private": true,
-  "version": "1.0.0",
-  "description": "Admin panel for managing Japanese music/song data on Gaku web.",
-  "author": "Ahmad Rivaldy S",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@reduxjs/toolkit": "^2.7.0",
-    "axios": "^1.9.0",
-    "class-variance-authority": "^0.7.1",
-    "events": "^3.3.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-helmet-async": "^2.0.5",
-    "react-images-uploading": "^3.1.7",
-    "react-redux": "^9.2.0",
-    "react-router-dom": "^7.5.3"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.22.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.22.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.26.1",
-    "vite": "^6.3.1"
-  }
+    "name": "gaku-panel",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Admin panel for managing Japanese music/song data on Gaku web.",
+    "author": "Ahmad Rivaldy S",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "lint": "eslint .",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^2.7.0",
+        "axios": "^1.9.0",
+        "class-variance-authority": "^0.7.1",
+        "events": "^3.3.0",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "react-images-uploading": "^3.1.7",
+        "react-redux": "^9.2.0",
+        "react-router-dom": "^7.5.3",
+        "redux-logger": "^3.0.6"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.26.0",
+        "@types/events": "^3.0.3",
+        "@types/node": "^22.15.3",
+        "@types/react": "^19.1.2",
+        "@types/react-dom": "^19.1.3",
+        "@types/redux-logger": "^3.0.13",
+        "@vitejs/plugin-react": "^4.4.1",
+        "eslint": "^9.26.0",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.20",
+        "globals": "^16.0.0",
+        "typescript": "~5.7.3",
+        "typescript-eslint": "^8.31.1",
+        "vite": "^6.3.4"
+    }
 }
