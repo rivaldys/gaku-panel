@@ -1,39 +1,68 @@
-# Gaku - Panel
-Admin panel for managing Japanese music/song data on Gaku web.
+# Gaku Panel
 
-## &#10095; Installation Prerequisites
-The following are required to be able to run this application:
-- Node.js 18
-- pnpm (package manager)
+![Status](https://img.shields.io/badge/status-private-important)
+![License](https://img.shields.io/badge/license-proprietary-red)
 
-## &#10095; Development
-For development purposes, before running this application please do some necessary preparations including: installing dependencies, and setting environment variables in the `.env.development` file.
+> **Private Admin Panel** for managing Japanese music/song data on the Gaku platform.
 
-### &#10102; Dependencies Installation
-   Command:
-   ```shell
-   npm install -g pnpm
-   ```
-   Run the above command if `pnpm` is not installed. Then run the command below:
-   ```shell
-   pnpm install
-   ```
-   ___
+This project is an internal tool developed and maintained by Ahmad Rivaldy S.  
+It is **not intended for public distribution, contribution, or reuse**, and is licensed under a **proprietary license**.
 
-### &#10103; Setting the Environment Variable
-Please copy or duplicate the `.env.example` file into `.env.development` (specific to the development version) or `.env` and adjust each variable. If you want to copy the file automatically, you can run the command below in the terminal and adjust each variable.
+---
 
-Command:
-   ```shell
-   cp .env.example .env.development
-   ```
-   ---
+## 🧩 Overview
 
-### &#10104; Running the App
-   Command:
-   ```shell
-   pnpm dev
-   ```
+**Gaku Panel** is designed to manage metadata related to Japanese music, artists, and song entries on the Gaku web platform.  
+Built with modern frontend technologies and tailored specifically for internal administrative workflows.
 
-## &#10095; Author
-This documentation was written by [Ahmad Rivaldy S](https://rivaldy.net)
+> **Note:** This project is not part of the public Gaku client-facing application.
+
+---
+
+## 🚀 Getting Started
+
+See [`DEVELOPMENT.md`](./DEVELOPMENT.md) for setup instructions.
+
+---
+
+## 🚫 License
+
+This project is **closed source** and all rights are reserved.
+
+See [`LICENSE`](./LICENSE) for more details.
+
+---
+
+## ⚠️ Disclaimer
+
+This software is distributed for internal or authorized use only.  
+Access to this repository is restricted, and all source code, assets, and related materials are confidential.
+
+Any attempt to access, copy, distribute, or modify this project without explicit written permission from the author is strictly prohibited.
+
+---
+
+## 📫 Contact
+
+For inquiries or access permissions, please contact:  
+**GitHub**: [@rivaldys](https://github.com/rivaldys)  
+
+---
+
+## 🛠️ Tech Stack
+
+- React 19
+- Redux Toolkit
+- Vite
+- TypeScript
+- React Router DOM 7
+- ESLint
+
+---
+
+## 🗂️ Project Status
+
+This repository is actively maintained for private/internal use only.  
+Public contributions are **not accepted**.
+
+---
