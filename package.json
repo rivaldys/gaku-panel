@@ -1,10 +1,19 @@
 {
     "name": "gaku-panel",
-    "private": true,
     "version": "1.0.0",
     "description": "Admin panel for managing Japanese music/song data on Gaku web.",
+    "keywords": ["admin-panel", "dashboard", "j-music"],
     "author": "Ahmad Rivaldy S",
     "type": "module",
+    "private": true,
+    "homepage": "https://github.com/rivaldys/gaku-panel",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rivaldys/gaku-panel.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rivaldys/gaku-panel/issues"
+    },
     "scripts": {
         "dev": "vite",
         "build": "tsc -b && vite build",
@@ -38,5 +47,8 @@
         "typescript": "~5.7.3",
         "typescript-eslint": "^8.31.1",
         "vite": "^6.3.4"
+    },
+    "engines": {
+        "node": ">=22.0.0"
     }
 }
