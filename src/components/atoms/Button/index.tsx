@@ -1,12 +1,12 @@
 import { cva } from 'class-variance-authority'
 import type { ButtonHTMLAttributes } from 'react'
+import { useMemo } from 'react'
 import Icon from '../Icon'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     icon?: string
-    variant?: 'filled' | 'outlined' | 'disabled' | null | undefined
-    size?: 'sm' | 'md' | 'sm-icon-only' | 'md-icon-only' | null | undefined
-    // href: To
+    variant?: 'filled' | 'outlined' | 'disabled'
+    size?: 'sm' | 'md' | 'sm-icon-only' | 'md-icon-only'
 }
 
 const buttonStyle = cva('transition duration-300 flex justify-center items-center', {
@@ -33,75 +33,42 @@ const buttonStyle = cva('transition duration-300 flex justify-center items-cente
     }
 })
 
-const Button = ({ children, icon, variant, size, className, type, ...rest }: ButtonProps) =>
+const Button = ({ children, icon, variant: initialVariant = 'filled', size: initialSize = 'md', className, type = 'button', disabled, ...rest }: ButtonProps) =>
 {
-    // Basic configuration for icon
-    let iconSize = 18
-    let iconColor = '#ffffff'
-
-    if(size === 'sm') iconSize = 14
-    if(variant === 'outlined') iconColor = '#D66D75'
-
-    // Condition when button is disabled
-    if(rest.disabled)
+    const { variant, size, iconSize, iconColor } = useMemo(() =>
     {
-        variant = 'disabled'
-        iconColor = '#999999'
-    }
+        let variant = initialVariant
+        let size = initialSize
+        let iconSize = size === 'sm' ? 14 : 18
+        let iconColor = variant === 'outlined' ? '#D66D75' : '#ffffff'
 
-    // Condition when icon only is showed
-    if(icon && !children)
-    {
-        if(size === 'sm') size = 'sm-icon-only'
-        else size = 'md-icon-only'
-    }
+        if(disabled)
+        {
+            variant = 'disabled'
+            iconColor = '#999999'
+        }
 
-    // if(type === 'button-link')
-    // {
-    //     return (
-    //         <Link
-    //             to={href}
-    //             className={buttonStyle({ variant, size, className })}
-    //             {...rest}
-    //         >
-    //             {icon ? (
-    //                 <>
-    //                     <span className={children ? 'mr-[5px]' : undefined}>
-    //                         <Icon
-    //                             name={icon}
-    //                             size={iconSize}
-    //                             color={iconColor}
-    //                         />
-    //                     </span>
-    //                     {children && children}
-    //                 </>
-    //             ) : (
-    //                 children && children
-    //             )}
-    //         </Link>
-    //     )
-    // }
+        if(icon && !children)
+        {
+            size = size === 'sm' ? 'sm-icon-only' : 'md-icon-only'
+        }
+
+        return { variant, size, iconSize, iconColor }
+    }, [icon, children, initialVariant, initialSize, disabled])
 
     return (
         <button
             className={buttonStyle({ variant, size, className })}
             type={type}
+            disabled={disabled}
             {...rest}
         >
-            {icon ? (
-                <>
-                    <span className={children ? 'mr-[5px]' : undefined}>
-                        <Icon
-                            name={icon}
-                            size={iconSize}
-                            color={iconColor}
-                        />
-                    </span>
-                    {children && children}
-                </>
-            ) : (
-                children && children
+            {icon && (
+                <span className={children ? 'mr-[5px]' : undefined}>
+                    <Icon name={icon} size={iconSize} color={iconColor} />
+                </span>
             )}
+            {children}
         </button>
     )
 }
