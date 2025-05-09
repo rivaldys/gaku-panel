@@ -1,4 +1,4 @@
-import { IconProps } from 'gaku/types'
+import { IconProps } from 'gaku/shared/types'
 
 const IcCheckCircle = ({ size, color, variant }: IconProps) =>
 {

@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority'
 import { Icon } from 'gaku/components'
-import type { BusProps } from 'gaku/types'
+import type { BusProps } from 'gaku/shared/types'
 import { Bus } from 'gaku/utils'
 import { useEffect, useState } from 'react'
 

@@ -1,4 +1,4 @@
-import type { IconProps } from 'gaku/types'
+import type { IconProps } from 'gaku/shared/types'
 import {
     IcBell,
     IcChat,

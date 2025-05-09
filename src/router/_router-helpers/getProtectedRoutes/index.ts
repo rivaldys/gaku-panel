@@ -1,4 +1,4 @@
-import type { Route } from 'gaku/types'
+import type { Route } from 'gaku/shared/types'
 
 const getProtectedRoutes = (routes: Route[]) =>
 {

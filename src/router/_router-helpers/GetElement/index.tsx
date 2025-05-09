@@ -1,5 +1,5 @@
 import { AppLayout } from 'gaku/components'
-import type { Route, RouteComponentProps } from 'gaku/types'
+import type { Route, RouteComponentProps } from 'gaku/shared/types'
 import { ComponentType, createElement, Suspense } from 'react'
 import { Navigate, Outlet, useNavigate } from 'react-router-dom'
 import routes from '../../routes'

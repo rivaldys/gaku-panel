@@ -1,6 +1,6 @@
 import { Button, ErrorMessage, Input, InputGroup } from 'gaku/components'
 import { useAppDispatch, useAppSelector, useForm } from 'gaku/shared/hooks'
-import type { ActionResponse, ErrorState } from 'gaku/types'
+import type { ActionResponse, ErrorState } from 'gaku/shared/types'
 import { browserMind } from 'gaku/utils'
 import { FormEvent, useCallback, useEffect } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
