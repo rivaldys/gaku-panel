@@ -72,6 +72,9 @@ function setNestedValue<T extends Record<string, any>>(obj: T, path: string[], v
  *         email: ''
  *     }
  * })
+ * 
+ * @author Created with a cup of tea by Ahmad Rivaldy S
+ * @since 2025
  */
 const useForm = <T extends object>(initialValue: T) =>
 {

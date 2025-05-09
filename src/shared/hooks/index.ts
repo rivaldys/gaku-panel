@@ -1,5 +1,7 @@
 import useForm from './useForm'
+import useIntersectionObserver from './useIntersectionObserver'
 
 export {
-    useForm
+    useForm,
+    useIntersectionObserver
 }
