@@ -1,5 +1,5 @@
 import { Icon, ProfileDropdown } from 'gaku/components'
-import { browserMind } from 'gaku/utils'
+import { browserMind } from 'gaku/shared/utils'
 import type { Ref } from 'react'
 import { useNavigate } from 'react-router-dom'
 

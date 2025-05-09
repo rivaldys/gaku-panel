@@ -1,8 +1,6 @@
 import { Avatar, Icon } from 'gaku/components'
-import { logoutAction } from 'gaku/services/actions'
-import { useAppDispatch } from 'gaku/utils'
 import { forwardRef, useImperativeHandle, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 interface ProfileDropdownProps {
     name: string
@@ -21,15 +19,6 @@ const ProfileDropdown = forwardRef(({ name, desc, photo }: ProfileDropdownProps,
             isMenuVisible
         }
     })
-
-    const navigate = useNavigate()
-    const dispatch = useAppDispatch()
-
-    const logoutHandler = () =>
-    {
-        const res = { succeed: () => navigate('/auth/login') }
-        dispatch(logoutAction({}, res))
-    }
 
     return (
         <div className="relative">
@@ -56,7 +45,7 @@ const ProfileDropdown = forwardRef(({ name, desc, photo }: ProfileDropdownProps,
                     </Link>
                     <p
                         className="flex items-center px-[15px] py-[8px] transition-all hover:bg-red-50/70 hover:pl-[20px] hover:cursor-pointer"
-                        onClick={logoutHandler}
+                        // onClick={logoutHandler}
                     >
                         <Icon name="logout" size={18} />
                         <span className="ml-[10px]">Logout</span>

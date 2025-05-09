@@ -1,5 +1,5 @@
 import { cva } from 'class-variance-authority'
-import { useIntersectionObserver } from 'gaku/hooks'
+import { useIntersectionObserver } from 'gaku/shared/hooks'
 import type { HTMLProps } from 'react'
 import { useEffect, useRef, useState } from 'react'
 

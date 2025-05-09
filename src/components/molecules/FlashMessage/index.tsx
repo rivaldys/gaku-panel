@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 import { Icon } from 'gaku/components'
 import type { BusProps } from 'gaku/shared/types'
-import { Bus } from 'gaku/utils'
+import { Bus } from 'gaku/shared/utils'
 import { useEffect, useState } from 'react'
 
 const messageStyle = cva('opacity-0 flex items-center rounded-xl px-[25px] py-[20px] fixed bottom-[35px] right-[35px] z-[1111] drop-shadow-[0_3px_3px_rgba(128,128,128,0.25)] transition duration-300', {

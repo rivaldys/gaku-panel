@@ -1,9 +1,5 @@
-import { Breadcrumbs, Button, Sidebar, Title, Topbar } from 'gaku/components'
-import { routes } from 'gaku/router'
-import { browserMind } from 'gaku/utils'
-import { ReactNode, Suspense, useCallback, useEffect, useRef } from 'react'
+import { ReactNode, Suspense } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { useNavigate } from 'react-router-dom'
 
 interface AppLayoutProps {
     children: ReactNode
@@ -16,30 +12,8 @@ interface AppLayoutProps {
     }
 }
 
-const AppLayout = ({ children, pageTitle, createButton, rootInfo }: AppLayoutProps) =>
+const AppLayout = ({ children }: AppLayoutProps) =>
 {
-    // const filteredRoutes = routes.filter(route => route.sidebar)
-    // const sortedRoutes = filteredRoutes.sort((a, b) => a.sidebar.order - b.sidebar.order)
-
-    const navigate = useNavigate()
-    const profileDropdownRef = useRef()
-
-    // const hideProfileDropdown = () =>
-    // {
-    //     return profileDropdownRef.current && profileDropdownRef.current.isMenuVisible && profileDropdownRef.current.hide()
-    // }
-
-    const isAuthenticated = useCallback(() =>
-    {
-        const refreshToken = browserMind.remember('refresh_token')
-        // if(!refreshToken) navigate('/auth/login')
-    }, [navigate])
-
-    useEffect(() =>
-    {
-        isAuthenticated()
-    }, [isAuthenticated])
-
     return (
         <HelmetProvider>
             <Helmet>
