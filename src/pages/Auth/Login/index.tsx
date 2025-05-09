@@ -6,8 +6,9 @@ const Login = () =>
     return (
         <HelmetProvider>
             <Helmet>
-                <title>Login - Gaku Panel</title>
+                <title>Login &#8211; Gaku Panel</title>
             </Helmet>
+
             <div className="bg-red-50/20">
                 <div className="min-h-screen 2xl:w-7/12 xl:w-10/12 w-full 2xl:px-0 px-6 mx-auto lg:py-24 py-10 flex justify-end">
                     <main className="lg:w-5/12 w-full order-1 lg:order-2">

@@ -17,39 +17,12 @@ const AppLayout = ({ children }: AppLayoutProps) =>
     return (
         <HelmetProvider>
             <Helmet>
-                {/* <title>{rootInfo ? rootInfo.name + ': ' + pageTitle : pageTitle} - Gaku Panel</title> */}
-                <title>Gaku Panel</title>
+                <title>Gaku Panel &#8211; Panel to manage Japanese music/song data</title>
             </Helmet>
-            {/* <div className="h-screen flex" onClick={hideProfileDropdown}> */}
-            <div className="h-screen flex">
-                {/* <Sidebar currentPage={rootInfo ? rootInfo.name : pageTitle} data={sortedRoutes} /> */}
-                <div className="bg-[#f8f8f8] flex-1 flex flex-col">
-                    {/* <Topbar profileDropdownRef={profileDropdownRef} isBackButtonActive={rootInfo ? true : false} /> */}
-                    <main className="flex-1 p-[30px] overflow-auto my-[5px] mr-[5px] [&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:rounded-md [&::-webkit-scrollbar-track]:bg-[#dedede]/30 [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:bg-[#E29587]/40">
-                        <div className="flex justify-between items-center mb-[30px]">
-                            {/* <div>
-                                <Title text={rootInfo ? rootInfo.name + ': ' + pageTitle : pageTitle} className="mb-[5px]" />
-                                <Breadcrumbs paths={rootInfo ? ['Panel', rootInfo.name, pageTitle] : ['Panel', pageTitle]} />
-                            </div> */}
 
-                            {/* {createButton && (
-                                <Button
-                                    title="Add New"
-                                    type="button-link"
-                                    icon="plus"
-                                    href={createButton.destination_path}
-                                >
-                                    Add New
-                                </Button>
-                            )} */}
-                        </div>
-                        
-                        <Suspense fallback={<div>Loading...</div>}>
-                            {children}
-                        </Suspense>
-                    </main>
-                </div>
-            </div>
+            <Suspense fallback={<div>Loading...</div>}>
+                {children}
+            </Suspense>
         </HelmetProvider>
     )
 }
