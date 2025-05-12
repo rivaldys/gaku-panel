@@ -35,6 +35,7 @@
             "gaku/services/store": ["services/store"],
             "gaku/shared/constants": ["shared/constants"],
             "gaku/shared/hooks": ["shared/hooks"],
+            "gaku/shared/lib": ["shared/lib"],
             "gaku/shared/types": ["shared/types"],
             "gaku/shared/utils": ["shared/utils"],
             "gaku/package": ["../package.json"],

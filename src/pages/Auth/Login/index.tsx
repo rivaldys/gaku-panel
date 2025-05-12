@@ -1,16 +1,17 @@
 import { Button, Input, InputGroup } from 'gaku/components'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { Head } from 'gaku/shared/lib'
 
 const Login = () =>
 {
     return (
-        <HelmetProvider>
-            <Helmet>
-                <title>Login &#8211; Gaku Panel</title>
-            </Helmet>
+        <>
+            <Head>
+                {/* <title>Login &#8211; Gaku Panel</title> */}
+                <title>Gaku Panel – Song: Blue Bird</title>
+            </Head>
 
-            <div className="bg-red-50/20">
-                <div className="min-h-screen 2xl:w-7/12 xl:w-10/12 w-full 2xl:px-0 px-6 mx-auto lg:py-24 py-10 flex justify-end">
+            <div className="bg-red-50/20 border border-[salmon]">
+                <div className="min-h-screen 2xl:w-7/12 xl:w-10/12 border border-[blue] w-full 2xl:px-0 px-6 mx-auto lg:py-24 py-10 flex justify-end">
                     <main className="lg:w-5/12 w-full order-1 lg:order-2">
                         <form
                             className="bg-white min-h-[300px] px-14 py-16 rounded-xl drop-shadow-[0_5px_25px_rgba(0,0,0,0.1)]"
@@ -45,7 +46,7 @@ const Login = () =>
                     </main>
                 </div>
             </div>
-        </HelmetProvider>
+        </>
     )
 }
 

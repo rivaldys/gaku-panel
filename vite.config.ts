@@ -22,6 +22,7 @@ export default ({ mode }: ConfigEnv) => {
                 "gaku/services/store": "/src/services/store",
                 "gaku/shared/constants": "/src/shared/constants",
                 "gaku/shared/hooks": "/src/shared/hooks",
+                "gaku/shared/lib": "/src/shared/lib",
                 "gaku/shared/types": "/src/shared/types",
                 "gaku/shared/utils": "/src/shared/utils",
                 "gaku/package": "./package.json"
