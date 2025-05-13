@@ -1,5 +1,4 @@
-import { ReactNode, Suspense } from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { type ReactNode, Suspense } from 'react'
 
 interface AppLayoutProps {
     children: ReactNode
@@ -12,19 +11,11 @@ interface AppLayoutProps {
     }
 }
 
-const AppLayout = ({ children }: AppLayoutProps) =>
+export default function AppLayout({ children }: AppLayoutProps)
 {
     return (
-        <HelmetProvider>
-            <Helmet>
-                <title>Gaku Panel &#8211; Panel to manage Japanese music/song data</title>
-            </Helmet>
-
-            <Suspense fallback={<div>Loading...</div>}>
-                {children}
-            </Suspense>
-        </HelmetProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+            {children}
+        </Suspense>
     )
 }
-
-export default AppLayout

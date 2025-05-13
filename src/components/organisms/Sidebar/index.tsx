@@ -14,7 +14,7 @@ interface SidebarProps {
     data: SidebarDataProps[]
 }
 
-const Sidebar = ({ currentPage, data }: SidebarProps) =>
+export default function Sidebar({ currentPage, data }: SidebarProps)
 {
     return (
         <nav className="w-[250px] bg-white border-r border-[#f5f5f5]">
@@ -39,5 +39,3 @@ const Sidebar = ({ currentPage, data }: SidebarProps) =>
         </nav>
     )
 }
-
-export default Sidebar

@@ -6,7 +6,7 @@ interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {}
 
 const avatarStyle = cva('w-10 h-10 rounded-[10px]')
 
-const Avatar = ({ className, src, alt }: AvatarProps) =>
+export default function Avatar({ className, src, alt }: AvatarProps)
 {
     return (
         <img
@@ -16,5 +16,3 @@ const Avatar = ({ className, src, alt }: AvatarProps) =>
         />
     )
 }
-
-export default Avatar

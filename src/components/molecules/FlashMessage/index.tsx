@@ -20,7 +20,7 @@ const messageStyle = cva('opacity-0 flex items-center rounded-xl px-[25px] py-[2
     }
 })
 
-const FlashMessage = () =>
+export default function FlashMessage()
 {
     const [visibility, setVisibility] = useState(false)
     const [message, setMessage] = useState('')
@@ -61,5 +61,3 @@ const FlashMessage = () =>
         </div>
     )
 }
-
-export default FlashMessage

@@ -4,6 +4,11 @@ import routes from './routes'
 
 const browserRouter = createBrowserRouter(routeMapper(routes))
 
-const Router = () => <RouterProvider router={browserRouter} />
+function Router()
+{
+    return (
+        <RouterProvider router={browserRouter} />
+    )
+}
 
 export { Router, routes }

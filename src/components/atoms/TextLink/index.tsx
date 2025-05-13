@@ -8,7 +8,7 @@ interface TextLinkProps extends LinkProps {
 
 const textLinkStyle = cva('text-eselection-green-5 transition duration-300 hover:text-eselection-green-5/70')
 
-const TextLink = ({ children, className, href, to, ...rest }: TextLinkProps) =>
+export default function TextLink({ children, className, href, to, ...rest }: TextLinkProps)
 {
     return (
         <Link
@@ -20,5 +20,3 @@ const TextLink = ({ children, className, href, to, ...rest }: TextLinkProps) =>
         </Link>
     )
 }
-
-export default TextLink

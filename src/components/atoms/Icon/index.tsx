@@ -26,7 +26,7 @@ import {
     IcXCircle
 } from 'gaku/assets'
 
-const Icon = ({ name, size, color, variant }: IconProps) =>
+export default function Icon({ name, size, color, variant }: IconProps)
 {
     const currentSize = size ? size : 24
     const currentColor = color ? color : '#999999'
@@ -58,5 +58,3 @@ const Icon = ({ name, size, color, variant }: IconProps) =>
 
     return <IcHome size={currentSize} color={currentColor} />
 }
-
-export default Icon

@@ -16,7 +16,7 @@ interface ImageUploaderProps {
     flaggingIcon?: string
 }
 
-const ImageUploader = ({ className, defaultValue, value, placeholder, onChange, id, displayType, width, errorMessage, flaggingIcon }: ImageUploaderProps) =>
+export default function ImageUploader({ className, defaultValue, value, placeholder, onChange, id, displayType, width, errorMessage, flaggingIcon }: ImageUploaderProps)
 {
     const customStyles = className ? ` ${className}` : ''
     const currentDisplayType = displayType && typeof displayType === 'string' 
@@ -98,5 +98,3 @@ const ImageUploader = ({ className, defaultValue, value, placeholder, onChange, 
         </ImageUploading>
     )
 }
-
-export default ImageUploader

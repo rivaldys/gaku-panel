@@ -33,7 +33,7 @@ const buttonStyle = cva('transition duration-300 flex justify-center items-cente
     }
 })
 
-const Button = ({ children, icon, variant: initialVariant = 'filled', size: initialSize = 'md', className, type = 'button', disabled, ...rest }: ButtonProps) =>
+export default function Button({ children, icon, variant: initialVariant = 'filled', size: initialSize = 'md', className, type = 'button', disabled, ...rest }: ButtonProps)
 {
     const { variant, size, iconSize, iconColor } = useMemo(() =>
     {
@@ -72,5 +72,3 @@ const Button = ({ children, icon, variant: initialVariant = 'filled', size: init
         </button>
     )
 }
-
-export default Button

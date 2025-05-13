@@ -52,7 +52,7 @@ const containerStyle = cva('relative w-full')
 const suggestionsContainerStyle = cva('overflow-auto bg-white border border-gray-200 rounded-md absolute inset-x-0 mt-[5px] z-10 [&::-webkit-scrollbar]:w-[5px] [&::-webkit-scrollbar-track]:rounded-md [&::-webkit-scrollbar-track]:bg-[#dedede]/30 [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:bg-[#dedede]/70')
 const suggestionsItemStyle = cva('flex text-[#555555] text-sm px-5 py-2 hover:bg-red-50/80 hover:cursor-pointer')
 
-const AutoComplete = ({
+export default function AutoComplete({
     className,
     value,
     defaultValue,
@@ -67,7 +67,7 @@ const AutoComplete = ({
     shouldReset,
     autoCascade,
     ...rest
-}: AutoCompleteProps) =>
+}: AutoCompleteProps)
 {
     const [filteredSuggestions, setFilteredSuggestions] = useState<any[]>([])
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(0)
@@ -245,5 +245,3 @@ const AutoComplete = ({
         </div>
     )
 }
-
-export default AutoComplete

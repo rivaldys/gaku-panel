@@ -9,7 +9,7 @@ interface FlatListProps extends LinkProps {
     goToDetail: string
 }
 
-const FlatList = ({ photo, title, desc, goToDetail }: FlatListProps) => 
+export default function FlatList({ photo, title, desc, goToDetail }: FlatListProps)
 {
     return (
         <Link
@@ -28,5 +28,3 @@ const FlatList = ({ photo, title, desc, goToDetail }: FlatListProps) =>
         </Link>
     )
 }
-
-export default FlatList

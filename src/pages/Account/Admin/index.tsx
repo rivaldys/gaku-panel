@@ -1,4 +1,4 @@
-const Admin = () =>
+export default function Admin()
 {
     return (
         <>
@@ -6,5 +6,3 @@ const Admin = () =>
         </>
     )
 }
-
-export default Admin

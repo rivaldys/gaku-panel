@@ -25,7 +25,7 @@ const imageStyle = cva('w-full h-full bg-gray-200 transition duration-500', {
     }
 })
 
-const Image = ({ className, classNames, src, preload, alt, variant }: ImageProps) =>
+export default function Image({ className, classNames, src, preload, alt, variant }: ImageProps)
 {
     const [imageSrc, setImageSrc] = useState(preload ? preload : src)
     const [currentBlur, setCurrentBlur] = useState(preload ? 'blur-md' : 'blur-none')
@@ -56,5 +56,3 @@ const Image = ({ className, classNames, src, preload, alt, variant }: ImageProps
         </div>
     )
 }
-
-export default Image

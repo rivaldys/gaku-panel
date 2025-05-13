@@ -1,4 +1,4 @@
-const Catalog = () =>
+export default function Catalog()
 {
     return (
         <>
@@ -7,5 +7,4 @@ const Catalog = () =>
     )
 }
 
-export default Catalog
 export { Catalog }

@@ -1,4 +1,4 @@
-const Song = () =>
+export default function Song()
 {
     return (
         <>
@@ -7,5 +7,4 @@ const Song = () =>
     )
 }
 
-export default Song
 export { Song }

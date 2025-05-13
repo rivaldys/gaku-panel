@@ -1,4 +1,4 @@
-const Menu = () =>
+export default function Menu()
 {
     return (
         <>
@@ -6,5 +6,3 @@ const Menu = () =>
         </>
     )
 }
-
-export default Menu

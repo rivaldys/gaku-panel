@@ -8,7 +8,7 @@ interface TopbarProps {
     isBackButtonActive: boolean
 }
 
-const Topbar = ({ profileDropdownRef, isBackButtonActive }: TopbarProps) =>
+export default function Topbar({ profileDropdownRef, isBackButtonActive }: TopbarProps)
 {
     const loggedInUser = browserMind.remember('logged_in_user')
     const navigate = useNavigate()
@@ -33,5 +33,3 @@ const Topbar = ({ profileDropdownRef, isBackButtonActive }: TopbarProps) =>
         </header>
     )
 }
-
-export default Topbar

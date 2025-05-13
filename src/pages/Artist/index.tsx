@@ -1,4 +1,4 @@
-const Artist = () =>
+export default function Artist()
 {
     return (
         <>
@@ -7,5 +7,4 @@ const Artist = () =>
     )
 }
 
-export default Artist
 export { Artist }

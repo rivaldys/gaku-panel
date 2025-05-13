@@ -7,7 +7,7 @@ interface BreadcrumbsProps extends HTMLAttributes<HTMLUListElement> {
 
 const breadcrumbsStyle = cva('flex flex-col sm:flex-row')
 
-const Breadcrumbs = ({ className, paths }: BreadcrumbsProps) =>
+export default function Breadcrumbs({ className, paths }: BreadcrumbsProps)
 {
     return (
         <ul className={breadcrumbsStyle({ className })}>
@@ -25,5 +25,3 @@ const Breadcrumbs = ({ className, paths }: BreadcrumbsProps) =>
         </ul>
     )
 }
-
-export default Breadcrumbs

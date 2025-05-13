@@ -11,7 +11,7 @@ interface GetElementProps {
     route: Route
 }
 
-const GetElement = ({ route }: GetElementProps) =>
+export default function GetElement({ route }: GetElementProps)
 {
     const navigate = useNavigate()
 
@@ -28,5 +28,3 @@ const GetElement = ({ route }: GetElementProps) =>
         <Suspense fallback={<div>Loading...</div>}>{routeElement}</Suspense>
     )
 }
-
-export default GetElement

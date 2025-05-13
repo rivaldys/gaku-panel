@@ -11,7 +11,7 @@ interface InputGroupProps {
 
 const inputGroupLabelStyle = cva('block w-fit text-[#555555] text-sm ml-[5px] mb-[5px]')
 
-const InputGroup = ({ className, classNames, children, label, labelFor }: InputGroupProps) =>
+export default function InputGroup({ className, classNames, children, label, labelFor }: InputGroupProps)
 {
     return (
         <div className={className}>
@@ -27,5 +27,3 @@ const InputGroup = ({ className, classNames, children, label, labelFor }: InputG
         </div>
     )
 }
-
-export default InputGroup

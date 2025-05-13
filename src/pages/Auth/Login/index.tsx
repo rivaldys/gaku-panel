@@ -1,7 +1,7 @@
 import { Button, Input, InputGroup } from 'gaku/components'
 import { Head } from 'gaku/shared/lib'
 
-const Login = () =>
+export default function Login()
 {
     return (
         <>
@@ -49,5 +49,3 @@ const Login = () =>
         </>
     )
 }
-
-export default Login
