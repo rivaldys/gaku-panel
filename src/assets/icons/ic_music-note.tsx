@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcMusicNote = ({ size, color }: IconProps) =>
+export default function IcMusicNote({ size, color }: IconProps)
 {
     return (
         <svg
@@ -15,5 +15,3 @@ const IcMusicNote = ({ size, color }: IconProps) =>
         </svg>
     )
 }
-
-export default IcMusicNote

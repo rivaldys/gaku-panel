@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcCloudUpload = ({ size, color }: IconProps) =>
+export default function IcCloudUpload({ size, color }: IconProps)
 {
     return (
         <svg
@@ -15,5 +15,3 @@ const IcCloudUpload = ({ size, color }: IconProps) =>
         </svg>
     )
 }
-
-export default IcCloudUpload

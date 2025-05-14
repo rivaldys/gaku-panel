@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcTemplate = ({ size, color }: IconProps) =>
+export default function IcTemplate({ size, color }: IconProps)
 {
     return (
         <svg
@@ -14,5 +14,3 @@ const IcTemplate = ({ size, color }: IconProps) =>
         </svg>
     )
 }
-
-export default IcTemplate

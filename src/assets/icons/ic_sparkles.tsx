@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcSparkles = ({ size, color }: IconProps) =>
+export default function IcSparkles({ size, color }: IconProps)
 {
     return (
         <svg
@@ -15,5 +15,3 @@ const IcSparkles = ({ size, color }: IconProps) =>
         </svg>
     )
 }
-
-export default IcSparkles

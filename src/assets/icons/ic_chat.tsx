@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcChat = ({ size, color }: IconProps) =>
+export default function IcChat({ size, color }: IconProps)
 {
     return (
         <svg
@@ -14,5 +14,3 @@ const IcChat = ({ size, color }: IconProps) =>
         </svg>
     )
 }
-
-export default IcChat

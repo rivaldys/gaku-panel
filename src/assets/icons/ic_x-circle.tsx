@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcXCircle = ({ size, color, variant }: IconProps) =>
+export default function IcXCircle({ size, color, variant }: IconProps)
 {
     if(variant === 'filled')
     {
@@ -29,5 +29,3 @@ const IcXCircle = ({ size, color, variant }: IconProps) =>
         </svg>
     )
 }
-
-export default IcXCircle

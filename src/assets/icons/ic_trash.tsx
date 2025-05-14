@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcTrash = ({ size, color }: IconProps) =>
+export default function IcTrash({ size, color }: IconProps)
 {
     return (
         <svg
@@ -14,5 +14,3 @@ const IcTrash = ({ size, color }: IconProps) =>
         </svg>
     )
 }
-
-export default IcTrash

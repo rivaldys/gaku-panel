@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcChevronRight = ({ size, color }: IconProps) =>
+export default function IcChevronRight({ size, color }: IconProps)
 {
     return (
         <svg
@@ -15,5 +15,3 @@ const IcChevronRight = ({ size, color }: IconProps) =>
         </svg>
     )
 }
-
-export default IcChevronRight

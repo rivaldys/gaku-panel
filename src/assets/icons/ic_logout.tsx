@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcLogout = ({ size, color }: IconProps) =>
+export default function IcLogout({ size, color }: IconProps)
 {
     return (
         <svg
@@ -15,5 +15,3 @@ const IcLogout = ({ size, color }: IconProps) =>
         </svg>
     )
 }
-
-export default IcLogout

@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcViewGrid = ({ size, color }: IconProps) =>
+export default function IcViewGrid({ size, color }: IconProps)
 {
     return (
         <svg
@@ -14,5 +14,3 @@ const IcViewGrid = ({ size, color }: IconProps) =>
         </svg>
     )
 }
-
-export default IcViewGrid

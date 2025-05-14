@@ -1,6 +1,6 @@
 import { IconProps } from 'gaku/shared/types'
 
-const IcDocText = ({ size, color }: IconProps) =>
+export default function IcDocText({ size, color }: IconProps)
 {
     return (
         <svg
@@ -14,5 +14,3 @@ const IcDocText = ({ size, color }: IconProps) =>
         </svg>
     )
 }
-
-export default IcDocText
