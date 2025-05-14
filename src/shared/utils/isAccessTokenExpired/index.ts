@@ -1,8 +1,13 @@
 import { browserMind } from 'gaku/shared/utils'
 
 /**
+ * isAccessTokenExpired
+ * 
  * Checks whether the access token has expired based on the stored expiration time.
  * Returns true if the token is missing or expired.
+ * 
+ * @author Created with a cup of tea by Ahmad Rivaldy S
+ * @since 2025
  */
 const isAccessTokenExpired = (): boolean =>
 {
@@ -13,7 +18,7 @@ const isAccessTokenExpired = (): boolean =>
     const expired = !expiresAt || now > expiresAt
 
     // Log for debugging purposes in development environment
-    if(process.env.NODE_ENV === 'development')
+    if(import.meta.env.DEV)
     {
         console.debug('[Token Expiry Check]', {
             now,
