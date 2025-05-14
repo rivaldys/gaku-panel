@@ -7,6 +7,8 @@ type UseIntersectionObserverProps = {
 }
 
 /**
+ * useIntersectionObserver
+ * 
  * Custom React hook to observe when a DOM element enters the viewport.
  *
  * @param {Object} props - Hook options
@@ -34,7 +36,7 @@ const useIntersectionObserver = ({ ref, threshold = 0.5 }: UseIntersectionObserv
 
         observerRef.current = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
+                if(entry.isIntersecting) {
                     setHasIntersected(true)
                     observerRef.current?.disconnect()
                 }
