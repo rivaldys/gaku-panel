@@ -1,14 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { routeMapper } from './_router-helpers'
+import { routeMapper } from './core'
 import routes from './routes'
 
-const browserRouter = createBrowserRouter(routeMapper(routes))
+const router = createBrowserRouter(routeMapper(routes))
 
-function Router()
+export default function Router()
 {
-    return (
-        <RouterProvider router={browserRouter} />
-    )
+    return <RouterProvider router={router} />
 }
-
-export { Router, routes }
