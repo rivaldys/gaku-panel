@@ -6,9 +6,9 @@ type FormValue = string | number | boolean | object | Array<object>
 function setNestedValue<T extends Record<string, any>>(obj: T, path: string[], value: FormValue): T
 {
     if(path.length === 0) return value as T
-  
+
     const [head, ...rest] = path
-  
+
     return {
         ...obj,
         [head]: setNestedValue(obj?.[head] ?? {}, rest, value)
