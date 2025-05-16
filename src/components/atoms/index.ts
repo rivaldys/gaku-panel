@@ -1,7 +1,7 @@
 import Avatar from './Avatar'
 import Button from './Button'
 import ErrorMessage from './ErrorMessage'
-import Icon from './Icon'
+import Icon, { type IconName } from './Icon'
 import Image from './Image'
 import Input from './Input'
 import Select from './Select'
@@ -21,3 +21,5 @@ export {
     TextLink,
     Title
 }
+
+export type { IconName }
