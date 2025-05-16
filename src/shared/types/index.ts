@@ -1,3 +1,4 @@
+import type { IconName } from 'gaku/components'
 import { ComponentType, LazyExoticComponent } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -39,7 +40,7 @@ export interface RouteComponentProps {
 }
 
 export interface IconProps {
-    name?: string
+    name?: IconName
     size?: number
     color?: string
     variant?: string
