@@ -1,5 +1,5 @@
 import { FlashMessage } from 'gaku/components'
-import { Router } from 'gaku/router'
+import Router from 'gaku/router'
 import store from 'gaku/services/store'
 import { Bus } from 'gaku/shared/utils'
 import { Provider } from 'react-redux'

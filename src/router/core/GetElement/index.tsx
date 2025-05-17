@@ -1,6 +1,6 @@
 import { AppLayout } from 'gaku/components'
 import type { Route, RouteComponentProps } from 'gaku/shared/types'
-import { type ComponentType, createElement, type ReactNode, Suspense } from 'react'
+import { type ComponentType, createElement, Suspense } from 'react'
 import { Navigate, Outlet, useNavigate } from 'react-router-dom'
 import routes from '../../routes'
 import getProtectedRoutes from '../getProtectedRoutes'
@@ -18,24 +18,9 @@ export default function GetElement({ route }: GetElementProps)
     const isProtectedRoute = protectedRoutes.includes(route.path || '')
     const redirectionPath  = (route.meta && route.meta.redirection) ?? false
 
-    let routeElement: ReactNode
-
-    if(route.element === 'redirection' && redirectionPath)
-    {
-        routeElement = <Navigate to={redirectionPath} replace />
-    }
-    else if(route.element === 'route-grouping')
-    {
-        routeElement = <Outlet />
-    }
-    else if(typeof route.element === 'function')
-    {
-        routeElement = createElement(route.element as ComponentType<RouteComponentProps>, { navigate })
-    }
-    else
-    {
-        routeElement = null
-    }
+    const routeElement = route.element === 'route-grouping' ? <Outlet /> : 
+                         route.element === 'redirection' && redirectionPath ? <Navigate to={redirectionPath} replace /> : 
+                         createElement(route.element as ComponentType<RouteComponentProps>, { navigate })
 
     return isProtectedRoute ? (
         <AppLayout>{routeElement}</AppLayout>
