@@ -1,4 +1,3 @@
-import type { IconProps } from 'gaku/shared/types'
 import {
     IcBell,
     IcChat,
@@ -25,6 +24,7 @@ import {
     IcX,
     IcXCircle
 } from 'gaku/assets'
+import type { IconProps } from 'gaku/shared/types'
 
 const iconMap = {
     'bell': IcBell,
@@ -60,6 +60,14 @@ export default function Icon({ name, size, color, variant }: IconProps)
     const currentSize = size ? size : 24
     const currentColor = color ? color : '#999999'
 
-    const IconComponent = iconMap[name ?? 'home']
+    const fallbackName: IconName = 'home'
+    const iconName = (name && iconMap[name]) ? name : fallbackName
+
+    if(!name || !iconMap[name])
+    {
+        console.warn(`[Icon] Unknown icon name: "${name}", falling back to "${fallbackName}"`)
+    }
+
+    const IconComponent = iconMap[iconName]
     return <IconComponent size={currentSize} color={currentColor} variant={variant} />
 }
