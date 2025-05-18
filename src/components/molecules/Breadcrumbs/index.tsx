@@ -10,18 +10,38 @@ const breadcrumbsStyle = cva('flex flex-col sm:flex-row')
 export default function Breadcrumbs({ className, paths }: BreadcrumbsProps)
 {
     return (
-        <ul className={breadcrumbsStyle({ className })}>
-            {paths &&
-                paths.map((path, index) => {
-                    if(index === 0) return <li className="font-normal text-sm text-[#D66D75]" key={index}>{path}</li>
-                    
-                    return (
-                        <li className="font-normal text-xs sm:text-sm text-[#999999]" key={index}>
-                            <span className="font-normal mx-[5px]">{window.innerWidth >= 640 ? '/' : '|___'}</span>
-                            {path}
-                        </li>
-                    )
-            })}
-        </ul>
+        <nav
+            aria-label="Breadcrumb"
+            data-role="breadcrumb"
+        >
+            <ul className={breadcrumbsStyle({ className })}>
+                {paths &&
+                    paths.map((path, index) => {
+                        if(index === 0) return (
+                            <li
+                                className="font-normal text-sm text-[#D66D75]"
+                                key={index}
+                            >
+                                {path}
+                            </li>
+                        )
+                        
+                        return (
+                            <li
+                                className="font-normal text-xs sm:text-sm text-[#999999]"
+                                key={index}
+                            >
+                                <span
+                                    aria-hidden="true"
+                                    className="font-normal mx-[5px]"
+                                >
+                                    {window.innerWidth >= 640 ? '/' : '|___'}
+                                </span>
+                                {path}
+                            </li>
+                        )
+                })}
+            </ul>
+        </nav>
     )
 }

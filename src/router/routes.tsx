@@ -11,9 +11,33 @@ const Song: RouteComponent = lazy(() => import('../pages/Song'))
 
 const routes = [
     {
-        name: 'Login',
+        name: 'Main',
         path: '/',
-        element: Login,
+        element: 'redirection',
+        meta: {
+            isProtectedRoute: false,
+            navbar: undefined,
+            redirection: '/auth/login'
+        }
+    },
+    {
+        name: 'Auth',
+        path: '/auth',
+        element: 'route-grouping',
+        children: [
+            {
+                name: 'Auth',
+                index: true,
+                element: 'redirection',
+                meta: { navbar: undefined, redirection: '/auth/login' }
+            },
+            {
+                name: 'Login',
+                path: 'login',
+                element: Login,
+                meta: { navbar: undefined }
+            }
+        ],
         meta: {
             isProtectedRoute: false,
             navbar: undefined
@@ -23,29 +47,28 @@ const routes = [
         name: 'Panel',
         path: '/panel',
         element: 'route-grouping',
-        children:
-        [
+        children: [
             {
                 name: 'Panel',
                 index: true,
                 element: 'redirection',
-                meta: { navbar: undefined, redirection: '/' }
+                meta: { navbar: undefined, redirection: '/panel/songs' }
             },
             {
                 name: 'Artists',
-                path: `artists`,
+                path: 'artists',
                 element: Artist,
                 meta: { navbar: undefined }
             },
             {
                 name: 'Catalogs',
-                path: `catalogs`,
+                path: 'catalogs',
                 element: Catalog,
                 meta: { navbar: undefined }
             },
             {
                 name: 'Songs',
-                path: `songs`,
+                path: 'songs',
                 element: Song,
                 meta: { navbar: undefined }
             },
