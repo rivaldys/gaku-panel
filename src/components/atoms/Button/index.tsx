@@ -1,12 +1,10 @@
 import { cva } from 'class-variance-authority'
 import type { ButtonHTMLAttributes } from 'react'
-import { useMemo } from 'react'
-import Icon from '../Icon'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     icon?: string
     variant?: 'filled' | 'outlined' | 'disabled'
-    size?: 'sm' | 'md' | 'sm-icon-only' | 'md-icon-only'
+    size?: 'sm' | 'md'
 }
 
 const buttonStyle = cva('transition duration-300 flex justify-center items-center', {
@@ -21,9 +19,7 @@ const buttonStyle = cva('transition duration-300 flex justify-center items-cente
         size:
         {
             sm: 'rounded-[4px] py-2 px-4 text-xs font-normal',
-            md: 'rounded-md py-3 px-6 text-sm font-medium',
-            'sm-icon-only': 'rounded-[4px] py-2 px-3',
-            'md-icon-only': 'rounded-md py-3 px-4'
+            md: 'rounded-md py-3 px-6 text-sm font-medium'
         }
     },
     defaultVariants:
@@ -33,41 +29,17 @@ const buttonStyle = cva('transition duration-300 flex justify-center items-cente
     }
 })
 
-export default function Button({ children, icon, variant: initialVariant = 'filled', size: initialSize = 'md', className, type = 'button', disabled, ...rest }: ButtonProps)
+export default function Button({ children, variant, size, className, type = 'button', disabled, ...rest }: ButtonProps)
 {
-    const { variant, size, iconSize, iconColor } = useMemo(() =>
-    {
-        let variant = initialVariant
-        let size = initialSize
-        let iconSize = size === 'sm' ? 14 : 18
-        let iconColor = variant === 'outlined' ? '#D66D75' : '#ffffff'
-
-        if(disabled)
-        {
-            variant = 'disabled'
-            iconColor = '#999999'
-        }
-
-        if(icon && !children)
-        {
-            size = size === 'sm' ? 'sm-icon-only' : 'md-icon-only'
-        }
-
-        return { variant, size, iconSize, iconColor }
-    }, [icon, children, initialVariant, initialSize, disabled])
+    const resolvedVariant = disabled ? 'disabled' : variant
 
     return (
         <button
-            className={buttonStyle({ variant, size, className })}
+            className={buttonStyle({ variant: resolvedVariant, size, className })}
             type={type}
             disabled={disabled}
             {...rest}
         >
-            {icon && (
-                <span className={children ? 'mr-[5px]' : undefined}>
-                    <Icon name={icon} size={iconSize} color={iconColor} />
-                </span>
-            )}
             {children}
         </button>
     )
