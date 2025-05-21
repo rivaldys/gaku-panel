@@ -1,90 +1,152 @@
-import type { ComponentType, LazyExoticComponent } from 'react'
+/**
+ * @fileoverview
+ * Application routes configuration for React Router.
+ * 
+ * Each route must conform to the `Route` type imported from shared/types.
+ * Routes can be of type:
+ *  - 'page': a normal page route with an element component.
+ *  - 'group': a route grouping child routes (no element, but may wrap children).
+ *  - 'redirect': a route that automatically redirects to another path.
+ * 
+ * @example
+ * // Simple page route:
+ * {
+ *     name: 'Login',
+ *     path: '/login',
+ *     type: 'page',
+ *     element: LoginComponent,
+ *     meta: {
+ *         isProtectedRoute: false,
+ *         navbarIcon: 'login-icon'
+ *     }
+ * }
+ * 
+ * @example
+ * // Group route with children:
+ * {
+ *     name: 'Panel',
+ *     path: '/panel',
+ *     type: 'group',
+ *     meta: {
+ *         isProtectedRoute: true
+ *     },
+ *     children: [
+ *         // child routes here
+ *     ]
+ * }
+ * 
+ * @example
+ * // Redirect route:
+ * {
+ *     name: 'Main',
+ *     path: '/',
+ *     type: 'redirect',
+ *     meta: {
+ *         redirection: '/auth/login'
+ *     }
+ * }
+ * 
+ * @typedef {import('gaku/shared/types').Route} Route
+ */
+import type { Route } from 'gaku/shared/types'
 import { lazy } from 'react'
 
-type RouteComponent = LazyExoticComponent<ComponentType<{}>>
+const Artist = lazy(() => import('../pages/Artist'))
+const Catalog = lazy(() => import('../pages/Catalog'))
+const Login = lazy(() => import('../pages/Auth/Login'))
+const NotFound = lazy(() => import('../pages/NotFound'))
+const Song = lazy(() => import('../pages/Song'))
 
-const Artist: RouteComponent = lazy(() => import('../pages/Artist'))
-const Catalog: RouteComponent = lazy(() => import('../pages/Catalog'))
-const Login: RouteComponent = lazy(() => import('../pages/Auth/Login'))
-const NotFound: RouteComponent = lazy(() => import('../pages/NotFound'))
-const Song: RouteComponent = lazy(() => import('../pages/Song'))
-
-const routes = [
+/**
+ * List of application routes
+ * 
+ * @type {Route[]}
+ */
+const routes: Route[] = [
     {
         name: 'Main',
         path: '/',
-        element: 'redirection',
+        type: 'redirect',
         meta: {
-            isProtectedRoute: false,
-            navbar: undefined,
             redirection: '/auth/login'
         }
     },
     {
         name: 'Auth',
         path: '/auth',
-        element: 'route-grouping',
+        type: 'group',
+        meta: {
+            isProtectedRoute: false
+        },
         children: [
             {
-                name: 'Auth',
+                name: 'AuthIndex',
                 index: true,
-                element: 'redirection',
-                meta: { navbar: undefined, redirection: '/auth/login' }
+                type: 'redirect',
+                meta: {
+                    redirection: '/auth/login'
+                }
             },
             {
                 name: 'Login',
                 path: 'login',
-                element: Login,
-                meta: { navbar: undefined }
+                type: 'page',
+                element: Login
             }
-        ],
-        meta: {
-            isProtectedRoute: false,
-            navbar: undefined
-        }
+        ]
     },
     {
         name: 'Panel',
         path: '/panel',
-        element: 'route-grouping',
+        type: 'group',
+        meta: {
+            isProtectedRoute: true
+        },
         children: [
             {
-                name: 'Panel',
+                name: 'PanelIndex',
                 index: true,
-                element: 'redirection',
-                meta: { navbar: undefined, redirection: '/panel/songs' }
+                type: 'redirect',
+                meta: {
+                    redirection: '/panel/songs'
+                }
             },
             {
                 name: 'Artists',
                 path: 'artists',
+                type: 'page',
                 element: Artist,
-                meta: { navbar: undefined }
+                meta: {
+                    navbarIcon: 'sparkles'
+                }
             },
             {
                 name: 'Catalogs',
                 path: 'catalogs',
+                type: 'page',
                 element: Catalog,
-                meta: { navbar: undefined }
+                meta: {
+                    navbarIcon: 'collection'
+                }
             },
             {
                 name: 'Songs',
                 path: 'songs',
+                type: 'page',
                 element: Song,
-                meta: { navbar: undefined }
-            },
-        ],
-        meta: {
-            isProtectedRoute: true,
-            navbar: undefined
-        }
+                meta: {
+                    navbarIcon: 'music-note'
+                }
+            }
+        ]
     },
     {
         name: '404',
         path: '*',
+        type: 'page',
         element: NotFound,
         meta: {
-            isProtectedRoute: false,
-            navbar: undefined
+            isProtectedRoute: false
         }
     }
 ]

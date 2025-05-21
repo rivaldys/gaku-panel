@@ -2,10 +2,6 @@ import { AppLayout } from 'gaku/components'
 import type { Route, RouteComponentProps } from 'gaku/shared/types'
 import { type ComponentType, createElement, Suspense } from 'react'
 import { Navigate, Outlet, useNavigate } from 'react-router-dom'
-import routes from '../../routes'
-import getProtectedRoutes from '../getProtectedRoutes'
-
-const protectedRoutes = getProtectedRoutes(routes)
 
 interface GetElementProps {
     route: Route
@@ -14,17 +10,35 @@ interface GetElementProps {
 export default function GetElement({ route }: GetElementProps)
 {
     const navigate = useNavigate()
+    const isProtected = route.meta?.isProtectedRoute ?? false
 
-    const isProtectedRoute = protectedRoutes.includes(route.path || '')
-    const redirectionPath  = (route.meta && route.meta.redirection) ?? false
+    if(route.type === 'group')
+    {
+        return isProtected ? (
+            <AppLayout>
+                <Outlet />
+            </AppLayout>
+        ) : (
+            <Outlet />
+        )
+    }
 
-    const routeElement = route.element === 'route-grouping' ? <Outlet /> : 
-                         route.element === 'redirection' && redirectionPath ? <Navigate to={redirectionPath} replace /> : 
-                         createElement(route.element as ComponentType<RouteComponentProps>, { navigate })
+    if(route.type === 'redirect')
+    {
+        const to = route.meta?.redirection ?? '/'
+        return <Navigate to={to} replace />
+    }
 
-    return isProtectedRoute ? (
-        <AppLayout>{routeElement}</AppLayout>
-    ) : (
-        <Suspense fallback={<div>Loading...</div>}>{routeElement}</Suspense>
-    )
+    if(route.type === 'page')
+    {
+        const element = createElement(route.element as ComponentType<RouteComponentProps>, { navigate })
+
+        return isProtected ? (
+            <AppLayout>{element}</AppLayout>
+        ) : (
+            <Suspense fallback={<div>Loading...</div>}>{element}</Suspense>
+        )
+    }
+
+    return null
 }

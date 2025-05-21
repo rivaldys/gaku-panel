@@ -1,5 +1,5 @@
 import type { IconName } from 'gaku/components'
-import { ComponentType, LazyExoticComponent } from 'react'
+import type { ComponentType, LazyExoticComponent } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 declare global {
@@ -23,21 +23,53 @@ export interface BusProps {
     time?: number
 }
 
-export interface Route {
+export interface RouteComponentProps {
+    navigate: ReturnType<typeof useNavigate>
+}
+
+export type RouteComponent = LazyExoticComponent<ComponentType<{}>>
+
+export type RouteType = 'page' | 'group' | 'redirect'
+
+interface BaseRoute {
+    name: string
     path?: string
-    index?: boolean
-    element: LazyExoticComponent<ComponentType<{}>> | string
-    children?: Route[]
+    index?: true
     meta?: {
         isProtectedRoute?: boolean
-        navbar?: string
+        navbarIcon?: IconName
         redirection?: string
     }
 }
 
-export interface RouteComponentProps {
-    navigate: ReturnType<typeof useNavigate>
+export interface IndexRoute extends BaseRoute {
+    index: true
+    type: 'page'
+    element: RouteComponent
 }
+
+export interface IndexRedirectRoute extends BaseRoute {
+    index: true
+    type: 'redirect'
+}
+
+export interface PageRoute extends BaseRoute {
+    type: 'page'
+    path: string
+    element: RouteComponent
+}
+
+export interface GroupRoute extends BaseRoute {
+    type: 'group'
+    children: Route[]
+}
+
+export interface RedirectRoute extends BaseRoute {
+    type: 'redirect'
+    path: string
+}
+
+export type Route = IndexRoute | IndexRedirectRoute | PageRoute | GroupRoute | RedirectRoute
 
 export interface IconProps {
     name?: IconName
