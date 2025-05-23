@@ -1,4 +1,4 @@
-import { Icon } from 'gaku/components'
+import { Icon, Topbar } from 'gaku/components'
 import { type ReactNode, Suspense } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -42,13 +42,7 @@ export default function AppLayout({ children }: AppLayoutProps)
             </aside>
 
             <div className="bg-[#f8f8f8] flex-1 flex flex-col">
-                <header
-                    aria-label="Page Tools"
-                    className="bg-white h-[70px] flex items-center justify-between pl-[30px] pr-[30px] shadow-[0_5px_5px_-5px_rgba(128,128,128,0.3)]"
-                    data-role="page-tools"
-                >
-                    {/*  */}
-                </header>
+                <Topbar />
 
                 <main className="flex-1 p-[30px] overflow-auto my-[5px] mr-[5px] [&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:rounded-md [&::-webkit-scrollbar-track]:bg-[#dedede]/30 [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:bg-[#E29587]/40">
                     <Suspense fallback={<div>Loading...</div>}>
