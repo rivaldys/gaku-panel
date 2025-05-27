@@ -38,6 +38,7 @@ interface BaseRoute {
     meta?: {
         isProtectedRoute?: boolean
         navbarIcon?: IconName
+        order?: number
         redirection?: string
     }
 }

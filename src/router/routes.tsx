@@ -117,7 +117,8 @@ const routes: Route[] = [
                 type: 'page',
                 element: Artist,
                 meta: {
-                    navbarIcon: 'sparkles'
+                    navbarIcon: 'sparkles',
+                    order: 3
                 }
             },
             {
@@ -126,7 +127,8 @@ const routes: Route[] = [
                 type: 'page',
                 element: Catalog,
                 meta: {
-                    navbarIcon: 'collection'
+                    navbarIcon: 'collection',
+                    order: 2
                 }
             },
             {
@@ -135,7 +137,8 @@ const routes: Route[] = [
                 type: 'page',
                 element: Song,
                 meta: {
-                    navbarIcon: 'music-note'
+                    navbarIcon: 'music-note',
+                    order: 1
                 }
             }
         ]

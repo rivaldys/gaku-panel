@@ -1,41 +1,44 @@
 import { Icon } from 'gaku/components'
-import { Link } from 'react-router-dom'
+import { routes } from 'gaku/router'
+import { getNavbarRoutes } from 'gaku/router/core'
+import { Link, useLocation } from 'react-router-dom'
 
-interface SidebarDataProps {
-    path: string
-    name: string
-    sidebar: {
-        icon: string
-    }
-}
+const navbarRoutes = getNavbarRoutes(routes)
 
-interface SidebarProps {
-    currentPage: string
-    data: SidebarDataProps[]
-}
-
-export default function Sidebar({ currentPage, data }: SidebarProps)
+export default function Sidebar()
 {
-    return (
-        <nav className="w-[250px] bg-white border-r border-[#f5f5f5]">
-            <ul className="mt-[35px]">
-                {data.map((item, index) => (
-                    <li className="flex mb-[5px]" key={index}>
-                        <Link
-                            to={item.path}
-                            className={`w-[calc(100%-30px)] flex items-center py-3 px-4 rounded-lg ml-[15px] mr-[10px] transition duration-300 hover:bg-red-50 ${currentPage === item.name && 'bg-red-50'}`}
-                        >
-                            <Icon name={item.sidebar.icon} />
-                            <span className="text-sm leading-[21px] text-[#757575] ml-[15px]">{item.name}</span>
-                        </Link>
+    const location = useLocation()
+    const currentPath = location.pathname
 
-                        {currentPage === item.name
-                            ? <div className="w-[5px] bg-[#D66D75] rounded-l-[3px]" />
-                            : <div className="w-[5px] bg-transparent" />
-                        }
-                    </li>
-                ))}
-            </ul>
-        </nav>
+    return (
+        <aside
+            role="complementary"
+            aria-label="Sidebar Navigation"
+            className="w-[250px] bg-white border-r border-r-[#f5f5f5]"
+            data-role="sidebar"
+        >
+            <nav className="mt-[35px]">
+                <ul>
+                    {navbarRoutes.map((route, index) => {
+                        const isActive = currentPath.includes(route.path ?? '')
+
+                        return (
+                            <li className="flex mb-[5px]" key={`nav-item_${index+1}`}>
+                                <Link
+                                    className={`w-[calc(100%-30px)] flex items-center py-3 px-4 rounded-lg ml-[15px] mr-[10px] transition duration-300 hover:bg-red-50`}
+                                    to={route.path ?? '/'}
+                                    aria-current={isActive ? 'page' : undefined}
+                                >
+                                    <Icon name={route.meta?.navbarIcon} />
+                                    <span className="text-sm leading-[21px] text-[#757575] ml-[15px]">{route.name}</span>
+                                </Link>
+
+                                <div className={`w-[5px] ${isActive ? 'bg-[#D66D75]' : 'bg-transparent'} rounded-l-[3px]`} />
+                            </li>
+                        )
+                    })}
+                </ul>
+            </nav>
+        </aside>
     )
 }

@@ -30,6 +30,7 @@
             "gaku/components": ["components"],
             "gaku/pages": ["pages"],
             "gaku/router": ["router"],
+            "gaku/router/core": ["router/core"],
             "gaku/services/api": ["services/api"],
             "gaku/services/slices": ["services/slices"],
             "gaku/services/store": ["services/store"],
