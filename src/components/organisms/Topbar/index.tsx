@@ -1,4 +1,4 @@
-import { Icon } from 'gaku/components'
+import { Icon, UserDropdown } from 'gaku/components'
 import { useNavigate } from 'react-router-dom'
 
 export default function Topbar()
@@ -32,6 +32,8 @@ export default function Topbar()
                     </span>
                 )}
             </div>
+
+            <UserDropdown />
         </header>
     )
 }

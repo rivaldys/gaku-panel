@@ -15,7 +15,7 @@ export default function AppLayout({ children }: AppLayoutProps)
                 <Topbar />
 
                 <main className="flex-1 p-[30px] overflow-auto my-[5px] mr-[5px] [&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:rounded-md [&::-webkit-scrollbar-track]:bg-[#dedede]/30 [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:bg-[#E29587]/40">
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={<div className="text-[#555555]">Loading...</div>}>
                         {children}
                     </Suspense>
                 </main>
