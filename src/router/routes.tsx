@@ -51,10 +51,15 @@
 import type { Route } from 'gaku/shared/types'
 import { lazy } from 'react'
 
+const Admin = lazy(() => import('../pages/Account/Admin'))
 const Artist = lazy(() => import('../pages/Artist'))
 const Catalog = lazy(() => import('../pages/Catalog'))
+const Comment = lazy(() => import('../pages/Comment'))
 const Login = lazy(() => import('../pages/Auth/Login'))
+const Menu = lazy(() => import('../pages/Menu'))
 const NotFound = lazy(() => import('../pages/NotFound'))
+const Page = lazy(() => import('../pages/Page'))
+const Setting = lazy(() => import('../pages/Setting'))
 const Song = lazy(() => import('../pages/Song'))
 
 /**
@@ -112,6 +117,16 @@ const routes: Route[] = [
                 }
             },
             {
+                name: 'Accounts',
+                path: 'accounts',
+                type: 'page',
+                element: Admin,
+                meta: {
+                    navbarIcon: 'users',
+                    order: 4
+                }
+            },
+            {
                 name: 'Artists',
                 path: 'artists',
                 type: 'page',
@@ -129,6 +144,46 @@ const routes: Route[] = [
                 meta: {
                     navbarIcon: 'collection',
                     order: 2
+                }
+            },
+            {
+                name: 'Comments',
+                path: 'comments',
+                type: 'page',
+                element: Comment,
+                meta: {
+                    navbarIcon: 'chat',
+                    order: 7
+                }
+            },
+            {
+                name: 'Menus',
+                path: 'menus',
+                type: 'page',
+                element: Menu,
+                meta: {
+                    navbarIcon: 'view-grid',
+                    order: 6
+                }
+            },
+            {
+                name: 'Pages',
+                path: 'pages',
+                type: 'page',
+                element: Page,
+                meta: {
+                    navbarIcon: 'template',
+                    order: 5
+                }
+            },
+            {
+                name: 'Settings',
+                path: 'settings',
+                type: 'page',
+                element: Setting,
+                meta: {
+                    navbarIcon: 'cog',
+                    order: 8
                 }
             },
             {

@@ -1,5 +1,5 @@
-export * from './Auth'
 export * from './Artist'
+export * from './Auth'
 export * from './Catalog'
 export * from './NotFound'
 export * from './Song'

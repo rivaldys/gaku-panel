@@ -1,9 +1,9 @@
 import { Breadcrumbs, Title } from 'gaku/components'
 
-export default function Catalog()
+export default function Page()
 {
     return (
-         <>
+        <>
             <div
                 role="region"
                 aria-label="Page Header"
@@ -11,8 +11,8 @@ export default function Catalog()
                 data-role="page-header"
             >
                 <div>
-                    <Title text="Catalogs" className="mb-[5px]" />
-                    <Breadcrumbs paths={['Panel', 'Catalogs']} />
+                    <Title text="Pages" className="mb-[5px]" />
+                    <Breadcrumbs paths={['Panel', 'Pages']} />
                 </div>
             </div>
 
@@ -21,10 +21,8 @@ export default function Catalog()
                 aria-label="Page Content"
                 data-role="page-content"
             >
-                Catalog
+                Page
             </div>
         </>
     )
 }
-
-export { Catalog }
