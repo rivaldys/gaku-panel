@@ -20,7 +20,10 @@ export default function Sidebar()
             <nav className="mt-[35px]">
                 <ul>
                     {navbarRoutes.map((route, index) => {
-                        const isActive = currentPath.includes(route.path ?? '')
+                        const pathSegment = route.path ?? ''
+                        const singularSegment = pathSegment.endsWith('s') ? pathSegment.slice(0, -1) : null
+
+                        const isActive = currentPath.includes(`/${pathSegment}`) || (singularSegment && currentPath.includes(`/${singularSegment}`))
 
                         return (
                             <li className="flex mb-[5px]" key={`nav-item_${index+1}`}>

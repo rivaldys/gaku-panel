@@ -198,12 +198,12 @@ const routes: Route[] = [
                 }
             },
             {
-                name: 'Song',
+                name: 'SongAlias',
                 path: 'song',
                 type: 'group',
                 children: [
                     {
-                        name: 'SongIndex',
+                        name: 'SongAliasIndex',
                         index: true,
                         type: 'redirect',
                         meta: {
