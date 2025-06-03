@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: 'sm' | 'md'
 }
 
-const buttonStyle = cva('transition duration-300 flex justify-center items-center', {
+const buttonStyle = cva('transition duration-300 flex justify-center items-center hover:cursor-pointer', {
     variants:
     {
         variant:

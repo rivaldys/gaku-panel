@@ -1,9 +1,10 @@
 import { IconProps } from 'gaku/shared/types'
 
-export default function IcBell({ size, color }: IconProps)
+export default function IcBell({ className, size, color }: IconProps)
 {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             fill="none"

@@ -1,9 +1,10 @@
 import { IconProps } from 'gaku/shared/types'
 
-export default function IcChevronRight({ size, color }: IconProps)
+export default function IcChevronRight({ className, size, color }: IconProps)
 {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             fill="none"

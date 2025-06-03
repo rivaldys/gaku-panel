@@ -25,7 +25,7 @@ export default function Sidebar()
                         return (
                             <li className="flex mb-[5px]" key={`nav-item_${index+1}`}>
                                 <Link
-                                    className={`w-[calc(100%-30px)] flex items-center py-3 px-4 rounded-lg ml-[15px] mr-[10px] transition duration-300 hover:bg-red-50`}
+                                    className={`w-[calc(100%-30px)] flex items-center py-3 px-4 rounded-lg ml-[15px] mr-[10px] transition duration-300 hover:bg-red-50${isActive ? ' bg-red-50' : ''}`}
                                     to={route.path ?? '/'}
                                     aria-current={isActive ? 'page' : undefined}
                                 >

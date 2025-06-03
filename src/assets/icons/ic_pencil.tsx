@@ -1,9 +1,10 @@
 import { IconProps } from 'gaku/shared/types'
 
-export default function IcPencil({ size, color }: IconProps)
+export default function IcPencil({ className, size, color }: IconProps)
 {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             fill="none"

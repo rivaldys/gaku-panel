@@ -1,4 +1,4 @@
-import { Breadcrumbs, Title } from 'gaku/components'
+import { Breadcrumbs, Button, Icon, Title } from 'gaku/components'
 
 export default function Catalog()
 {
@@ -14,6 +14,11 @@ export default function Catalog()
                     <Title text="Catalogs" className="mb-[5px]" />
                     <Breadcrumbs paths={['Panel', 'Catalogs']} />
                 </div>
+
+                <Button>
+                    <Icon className="mr-[5px]" name="plus" size={18} color="white" />
+                    Add New
+                </Button>
             </div>
 
             <div

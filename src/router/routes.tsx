@@ -61,6 +61,7 @@ const NotFound = lazy(() => import('../pages/NotFound'))
 const Page = lazy(() => import('../pages/Page'))
 const Setting = lazy(() => import('../pages/Setting'))
 const Song = lazy(() => import('../pages/Song'))
+const SongCreate = lazy(() => import('../pages/Song/create'))
 
 /**
  * List of application routes
@@ -195,6 +196,27 @@ const routes: Route[] = [
                     navbarIcon: 'music-note',
                     order: 1
                 }
+            },
+            {
+                name: 'Song',
+                path: 'song',
+                type: 'group',
+                children: [
+                    {
+                        name: 'SongIndex',
+                        index: true,
+                        type: 'redirect',
+                        meta: {
+                            redirection: '/panel/songs'
+                        }
+                    },
+                    {
+                        name: 'Add New Song',
+                        path: 'create',
+                        type: 'page',
+                        element: SongCreate
+                    },
+                ]
             }
         ]
     },

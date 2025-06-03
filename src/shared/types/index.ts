@@ -73,6 +73,7 @@ export interface RedirectRoute extends BaseRoute {
 export type Route = IndexRoute | IndexRedirectRoute | PageRoute | GroupRoute | RedirectRoute
 
 export interface IconProps {
+    className?: string
     name?: IconName
     size?: number
     color?: string

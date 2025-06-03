@@ -1,9 +1,10 @@
 import { IconProps } from 'gaku/shared/types'
 
-export default function IcHome({ size, color }: IconProps)
+export default function IcHome({ className, size, color }: IconProps)
 {
     return (
         <svg
+            className={className}
             width={size}
             height={size}
             fill="none"

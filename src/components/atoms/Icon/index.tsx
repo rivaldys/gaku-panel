@@ -55,7 +55,7 @@ const iconMap = {
 
 export type IconName = keyof typeof iconMap
 
-export default function Icon({ name, size, color, variant }: IconProps)
+export default function Icon({ className, name, size, color, variant }: IconProps)
 {
     const currentSize = size ? size : 24
     const currentColor = color ? color : '#999999'
@@ -69,5 +69,5 @@ export default function Icon({ name, size, color, variant }: IconProps)
     }
 
     const IconComponent = iconMap[iconName]
-    return <IconComponent size={currentSize} color={currentColor} variant={variant} />
+    return <IconComponent className={className} size={currentSize} color={currentColor} variant={variant} />
 }

@@ -1,4 +1,4 @@
-import { Breadcrumbs, Title } from 'gaku/components'
+import { Breadcrumbs, Button, Icon, Title } from 'gaku/components'
 
 export default function Artist()
 {
@@ -14,6 +14,11 @@ export default function Artist()
                     <Title text="Artists" className="mb-[5px]" />
                     <Breadcrumbs paths={['Panel', 'Artists']} />
                 </div>
+
+                <Button>
+                    <Icon className="mr-[5px]" name="plus" size={18} color="white" />
+                    Add New
+                </Button>
             </div>
 
             <div
