@@ -1,7 +1,7 @@
 import { Icon, ProfileDropdown } from 'gaku/components'
 import { browserMind } from 'gaku/utils'
 import type { Ref } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 
 interface TopbarProps {
     profileDropdownRef: Ref<HTMLDivElement>

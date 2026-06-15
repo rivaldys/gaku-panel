@@ -5,34 +5,31 @@
     "description": "Admin panel for managing Japanese music/song data on Gaku web.",
     "author": "Ahmad Rivaldy S",
     "type": "module",
-    "scripts":
-    {
+    "scripts": {
         "dev": "vite",
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview"
     },
-    "dependencies":
-    {
-        "@reduxjs/toolkit": "^2.2.7",
-        "axios": "^1.7.7",
-        "class-variance-authority": "^0.7.0",
+    "dependencies": {
+        "@reduxjs/toolkit": "^2.12.0",
+        "axios": "^1.18.0",
+        "class-variance-authority": "^0.7.1",
         "events": "^3.3.0",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-helmet-async": "^2.0.5",
+        "react": "^19.2.7",
+        "react-dom": "^19.2.7",
+        "react-helmet-async": "^3.0.0",
         "react-images-uploading": "^3.1.7",
-        "react-redux": "^9.1.2",
-        "react-router-dom": "^6.26.1",
+        "react-redux": "^9.3.0",
+        "react-router": "^7.17.0",
         "redux": "^5.0.1"
     },
-    "devDependencies":
-    {
-        "@eslint/js": "^9.10.0",
-        "@types/node": "^22.5.4",
-        "@types/react": "^18.3.5",
-        "@types/react-dom": "^18.3.0",
-        "@vitejs/plugin-react": "^4.3.1",
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/node": "^25.9.3",
+        "@types/react": "^19.2.17",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^5.2.0",
         "autoprefixer": "^10.4.20",
         "eslint": "^9.10.0",
         "eslint-plugin-react-hooks": "^5.1.0-rc.0",
@@ -40,8 +37,8 @@
         "globals": "^15.9.0",
         "postcss": "^8.4.45",
         "tailwindcss": "^3.4.10",
-        "typescript": "^5.5.4",
-        "typescript-eslint": "^8.4.0",
-        "vite": "^5.4.3"
+        "typescript": "^6.0.3",
+        "typescript-eslint": "^8.61.0",
+        "vite": "^7.3.5"
     }
 }

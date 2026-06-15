@@ -5,7 +5,7 @@ import type { ActionResponse, ErrorState } from 'gaku/types'
 import { browserMind } from 'gaku/utils'
 import { FormEvent, useCallback, useEffect } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 
 const Login = () =>
 {

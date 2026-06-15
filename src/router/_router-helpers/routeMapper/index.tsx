@@ -1,5 +1,5 @@
 import { Route } from 'gaku/types'
-import { RouteObject } from 'react-router-dom'
+import { RouteObject } from 'react-router'
 import GetElement from '../GetElement'
 
 const routeMapper = (routes: Route[]): RouteObject[] =>

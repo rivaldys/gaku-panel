@@ -1,5 +1,5 @@
 import { Icon } from 'gaku/components'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 interface SidebarDataProps {
     path: string

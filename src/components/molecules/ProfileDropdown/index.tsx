@@ -2,7 +2,7 @@ import { Avatar, Icon } from 'gaku/components'
 import { logoutAction } from 'gaku/services/actions'
 import { useAppDispatch } from 'gaku/utils'
 import { forwardRef, useImperativeHandle, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router'
 
 interface ProfileDropdownProps {
     name: string

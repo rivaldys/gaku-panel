@@ -1,6 +1,6 @@
 import { Avatar, Icon } from 'gaku/components'
-import type { LinkProps } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import type { LinkProps } from 'react-router'
+import { Link } from 'react-router'
 
 interface FlatListProps extends LinkProps {
     photo?: string

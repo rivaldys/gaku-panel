@@ -1,9 +1,7 @@
-import { Breadcrumbs, Button, Sidebar, Title, Topbar } from 'gaku/components'
-import { routes } from 'gaku/router'
 import { browserMind } from 'gaku/utils'
 import { ReactNode, Suspense, useCallback, useEffect, useRef } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 
 interface AppLayoutProps {
     children: ReactNode
