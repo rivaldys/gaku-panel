@@ -1,6 +1,6 @@
 import { Avatar, Icon } from 'gaku/components'
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 export default function UserDropdown()
 {

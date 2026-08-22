@@ -1,4 +1,4 @@
-import type { RouteObject } from 'react-router-dom'
+import type { RouteObject } from 'react-router'
 import type { Route } from 'gaku/shared/types'
 import GetElement from '../GetElement'
 

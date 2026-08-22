@@ -1,7 +1,7 @@
 import { Icon } from 'gaku/components'
 import { routes } from 'gaku/router'
 import { getNavbarRoutes } from 'gaku/router/core'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router'
 
 const navbarRoutes = getNavbarRoutes(routes)
 

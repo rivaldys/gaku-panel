@@ -1,5 +1,5 @@
 import CryptoJS from 'crypto-js'
-import { JSONValue } from 'gaku/shared/types'
+import type { JSONValue } from 'gaku/shared/types'
 
 /**
  * cryptor — Utility for securely sealing and unsealing data.

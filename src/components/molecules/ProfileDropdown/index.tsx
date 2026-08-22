@@ -1,6 +1,6 @@
 import { Avatar, Icon } from 'gaku/components'
 import { forwardRef, useImperativeHandle, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 
 interface ProfileDropdownProps {
     name: string

@@ -1,6 +1,6 @@
 import type { IconName } from 'gaku/components'
 import type { ComponentType, LazyExoticComponent } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 
 declare global {
     interface Window {

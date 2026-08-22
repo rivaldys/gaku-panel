@@ -1,4 +1,4 @@
-import { JSONValue } from 'gaku/shared/types'
+import type { JSONValue } from 'gaku/shared/types'
 import { cryptor } from 'gaku/shared/utils'
 
 const SECRET_KEY = import.meta.env.VITE_BROWSER_MIND_SECRET_KEY

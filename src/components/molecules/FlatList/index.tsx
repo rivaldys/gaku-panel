@@ -1,6 +1,6 @@
 import { Avatar, Icon } from 'gaku/components'
-import type { LinkProps } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import type { LinkProps } from 'react-router'
+import { Link } from 'react-router'
 
 interface FlatListProps extends LinkProps {
     photo?: string
@@ -13,16 +13,16 @@ export default function FlatList({ photo, title, desc, goToDetail }: FlatListPro
 {
     return (
         <Link
-            className="group flex items-center bg-white p-5 rounded-[10px] drop-shadow-[0_3px_5px_rgba(128,128,128,0.15)] [&:not(:last-child)]:mb-[15px] hover:cursor-pointer hover:border-l-[5px] hover:border-l-white"
+            className="group flex items-center bg-white p-5 rounded-[10px] drop-shadow-[0_3px_5px_rgba(128,128,128,0.15)] not-last:mb-3.75 hover:cursor-pointer hover:border-l-[5px] hover:border-l-white"
             to={goToDetail}
             title="Go to detail"
         >
-            <Avatar className="mr-[10px]" src={photo} />
+            <Avatar className="mr-2.5" src={photo} />
             <div>
                 <p className="font-medium text-sm text-[#757575]">{title}</p>
                 <p className="font-light text-xs text-[#999999]">{desc}</p>
             </div>
-            <div className="absolute right-5 group-hover:right-[15px]">
+            <div className="absolute right-5 group-hover:right-3.75">
                 <Icon name="chevron-right" size={20} />
             </div>
         </Link>

@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import logger from 'redux-logger'
+import { createLogger } from 'redux-logger'
 import { authReducer } from 'gaku/services/slices'
+
+const logger = createLogger()
 
 const store = configureStore({
     reducer: {

@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { authService } from 'gaku/services/api'
-import { CredentialsPayload } from 'gaku/shared/types'
+import type { CredentialsPayload } from 'gaku/shared/types'
 
 interface AuthState {
     token: string | null

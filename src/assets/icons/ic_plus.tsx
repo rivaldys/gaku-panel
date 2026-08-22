@@ -1,4 +1,4 @@
-import { IconProps } from 'gaku/shared/types'
+import type { IconProps } from 'gaku/shared/types'
 
 export default function IcPlus({ className, size, color }: IconProps)
 {
