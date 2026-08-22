@@ -33,10 +33,10 @@ const AppLayout = ({ children, pageTitle, createButton, rootInfo }: AppLayoutPro
         // if(!refreshToken) navigate('/auth/login')
     }, [navigate])
 
-    useEffect(() =>
-    {
-        isAuthenticated()
-    }, [isAuthenticated])
+    // useEffect(() =>
+    // {
+    //     isAuthenticated()
+    // }, [isAuthenticated])
 
     return (
         <HelmetProvider>

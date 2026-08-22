@@ -12,7 +12,7 @@ export default ({ mode }: ConfigEnv) => {
             tsconfigPaths: true
         },
         server: {
-            port: parseInt(env.VITE_APP_PORT)
+            port: parseInt(env.VITE_APP_PORT) || 3000,
         }
     })
 }
