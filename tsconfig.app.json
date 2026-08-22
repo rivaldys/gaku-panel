@@ -21,8 +21,7 @@
         "noFallthroughCasesInSwitch": true,
 
         /* Absolute imports */
-        "paths":
-        {
+        "paths": {
             "gaku/assets": ["./src/assets"],
             "gaku/images": ["./src/assets/images"],
             "gaku/components": ["./src/components"],

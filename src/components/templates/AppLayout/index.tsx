@@ -45,12 +45,12 @@ const AppLayout = ({ children, pageTitle, createButton, rootInfo }: AppLayoutPro
                 <title>Gaku Panel</title>
             </Helmet>
             {/* <div className="h-screen flex" onClick={hideProfileDropdown}> */}
-            <div className="h-screen flex">
+            <div className="font-sans h-screen flex">
                 {/* <Sidebar currentPage={rootInfo ? rootInfo.name : pageTitle} data={sortedRoutes} /> */}
                 <div className="bg-[#f8f8f8] flex-1 flex flex-col">
                     {/* <Topbar profileDropdownRef={profileDropdownRef} isBackButtonActive={rootInfo ? true : false} /> */}
-                    <main className="flex-1 p-[30px] overflow-auto my-[5px] mr-[5px] [&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:rounded-md [&::-webkit-scrollbar-track]:bg-[#dedede]/30 [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:bg-[#E29587]/40">
-                        <div className="flex justify-between items-center mb-[30px]">
+                    <main className="flex-1 p-7.5 overflow-auto my-1.25 mr-1.25 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-md [&::-webkit-scrollbar-track]:bg-[#dedede]/30 [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-thumb]:bg-[#E29587]/40">
+                        <div className="flex justify-between items-center mb-7.5">
                             {/* <div>
                                 <Title text={rootInfo ? rootInfo.name + ': ' + pageTitle : pageTitle} className="mb-[5px]" />
                                 <Breadcrumbs paths={rootInfo ? ['Panel', rootInfo.name, pageTitle] : ['Panel', pageTitle]} />
