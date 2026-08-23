@@ -1,14 +1,19 @@
-import type { IconProps } from 'gaku/shared/types'
+import type { SvgIconProps } from '../Icon.types'
 
-export default function IcCheckCircle({ className, size, color, variant }: IconProps)
-{
+export default function IcCheckCircle({
+    className,
+    width,
+    height,
+    color,
+    variant
+}: SvgIconProps) {
     if(variant === 'filled')
     {
         return (
             <svg
                 className={className}
-                width={size}
-                height={size}
+                width={width}
+                height={height}
                 viewBox="0 0 20 20"
                 fill={color}
             >
@@ -20,8 +25,8 @@ export default function IcCheckCircle({ className, size, color, variant }: IconP
     return (
         <svg
             className={className}
-            width={size}
-            height={size}
+            width={width}
+            height={height}
             fill="none"
             viewBox="0 0 24 24"
             stroke={color}
